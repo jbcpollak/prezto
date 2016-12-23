@@ -1,5 +1,4 @@
 # Activate zsh completion
-fpath=(/opt/boxen/homebrew/share/zsh-completions $fpath)
 
 setopt sharehistory
 
@@ -25,7 +24,7 @@ zle -N down-line-or-local-history
 # Setup Homebrew ZSH Help
 unalias run-help
 autoload run-help
-HELPDIR=/opt/boxen/homebrew/share/zsh/help
+HELPDIR=/usr/share/zsh/5.2/help
 
 export EDITOR=nano
 export LESS="${LESS} -x4"
@@ -35,7 +34,6 @@ export DISPLAY=:0.0
 
 # Go
 export GOPATH=~/src/go
-export PATH=$PATH:/opt/boxen/homebrew/opt/go/libexec/bin
 
 # Groovy
 export GROOVY_HOME=/usr/local/groovy
@@ -45,24 +43,18 @@ export PATH=~/bin:/usr/local/mysql/bin:$GROOVY_HOME/bin:$PATH
 export ANDROID_HOME=~/src/android-sdk-macosx
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
-# Tomcat
-#export CATALINA_HOME=~/daemons/apache-tomcat-latest/
-#export PATH=$PATH:${CATALINA_HOME}/bin
-
 export GITHUB_API_TOKEN=548bc016425131685ae021add44a6d7f33bf1d2f
-export HOMEBREW_GITHUB_API_TOKEN=${GITHUB_API_TOKEN}
 
 export AWS_CREDENTIAL_FILE=~/.aws/accessKeys
 export DEBUG_KEYSTORE_PASSWD="red duck black swan"
 
-
-# Mysql
-export PATH=$PATH:/usr/local/mysql/bin
-
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
 
-source /opt/homebrew-cask/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source /opt/homebrew-cask/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 source <(kubectl completion `basename $SHELL`)
+
+eval "$(nodenv init -)"
+
