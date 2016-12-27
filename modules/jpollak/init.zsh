@@ -2,10 +2,11 @@
 
 setopt sharehistory
 
-bindkey "${key[Up]}" up-line-or-local-history
-bindkey "${key[Down]}" down-line-or-local-history
-bindkey "^[[1;5A" up-line-or-history    # [CTRL] + Cursor up
-bindkey "^[[1;5B" down-line-or-history  # [CTRL] + Cursor down
+bindkey "${terminfo[kpp]}" up-line-or-local-history
+bindkey "${terminfo[knp]}" down-line-or-local-history
+bindkey "^[^[[A" up-line-or-history    # [Meta] + Cursor up
+bindkey "^[^[[B" down-line-or-history  # [Meta] + Cursor down
+
 
 up-line-or-local-history() {
     zle set-local-history 1
