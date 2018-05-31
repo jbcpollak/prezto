@@ -35,6 +35,7 @@ export DISPLAY=:0.0
 
 # Go
 export GOPATH=~/src/go
+export PATH=$PATH:${GOPATH//://bin:}/bin
 
 # Groovy
 export GROOVY_HOME=/usr/local/groovy
@@ -52,10 +53,46 @@ export DEBUG_KEYSTORE_PASSWD="red duck black swan"
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
 
+# Golang
+export GOPATH=$HOME/src/go
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
+
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+
+
+# Do Completion Last
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 source <(kubectl completion `basename $SHELL`)
+source <(npm completion)
 
-eval "$(nodenv init -)"
+alias nano="nano -m"
+
+# Reattach to tmux
+#if [[ $TMUX = "" ]]; then
+#  tmux attach
+#fi
+
+# Postgres
+export PGHOST=localhost
+export PGUSER=6river
+export PGPASSWORD=6river
+
+# FASD
+
+eval "$(fasd --init auto)"
+
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
