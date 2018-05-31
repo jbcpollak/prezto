@@ -37,6 +37,9 @@ export DISPLAY=:0.0
 export GOPATH=~/src/go
 export PATH=$PATH:${GOPATH//://bin:}/bin
 
+# Rust
+export PATH=$PATH:${HOME}/.cargo/bin
+
 # Groovy
 export GROOVY_HOME=/usr/local/groovy
 export PATH=~/bin:/usr/local/mysql/bin:$GROOVY_HOME/bin:$PATH
