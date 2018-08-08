@@ -63,6 +63,8 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
+# ccache
+export PATH=/usr/local/opt/ccache/libexec:${PATH}
 
 # Do Completion Last
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
@@ -96,3 +98,4 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
+alias config='/usr/bin/git --git-dir=/Users/jpollak/.cfg/ --work-tree=/Users/jpollak'
