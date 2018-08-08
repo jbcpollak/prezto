@@ -48,11 +48,6 @@ export PATH=~/bin:/usr/local/mysql/bin:$GROOVY_HOME/bin:$PATH
 export ANDROID_HOME=~/src/android-sdk-macosx
 export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 
-export GITHUB_API_TOKEN=548bc016425131685ae021add44a6d7f33bf1d2f
-
-export AWS_CREDENTIAL_FILE=~/.aws/accessKeys
-export DEBUG_KEYSTORE_PASSWD="red duck black swan"
-
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
 
@@ -80,11 +75,6 @@ alias nano="nano -m"
 #  tmux attach
 #fi
 
-# Postgres
-export PGHOST=localhost
-export PGUSER=6river
-export PGPASSWORD=6river
-
 # FASD
 
 eval "$(fasd --init auto)"
@@ -99,3 +89,5 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
 alias config='/usr/bin/git --git-dir=/Users/jpollak/.cfg/ --work-tree=/Users/jpollak'
+
+source ${HOME}/.privaterc
