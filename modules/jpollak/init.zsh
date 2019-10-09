@@ -31,7 +31,7 @@ export EDITOR=nano
 export LESS="${LESS} -x4"
 export TZ=America/New_York
 
-export DISPLAY=:0.0
+export LESSOPEN="|/usr/local/bin/lesspipe.sh %s" LESS_ADVANCED_PREPROCESSOR=1
 
 # Go
 export GOPATH=~/src/go
@@ -45,8 +45,8 @@ export GROOVY_HOME=/usr/local/groovy
 export PATH=~/bin:/usr/local/mysql/bin:$GROOVY_HOME/bin:$PATH
 
 # Android SDK
-export ANDROID_HOME=~/src/android-sdk-macosx
-export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_SDK_ROOT/tools
 
 # Java
 export JAVA_HOME=`/usr/libexec/java_home`
@@ -55,11 +55,17 @@ export JAVA_HOME=`/usr/libexec/java_home`
 export GOPATH=$HOME/src/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
+# GNU Utils
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
 # ccache
 export PATH=/usr/local/opt/ccache/libexec:${PATH}
+
+# Miniconda
+export PATH=/usr/local/miniconda3/bin:${PATH}
 
 # Do Completion Last
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
@@ -76,6 +82,8 @@ alias nano="nano -m"
 #fi
 
 # FASD
+
+export BYOBU_PREFIX=/usr/local
 
 eval "$(fasd --init auto)"
 
