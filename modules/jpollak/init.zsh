@@ -60,6 +60,7 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
+eval "$(pyenv init -)"
 
 # ccache
 export PATH=/usr/local/opt/ccache/libexec:${PATH}
