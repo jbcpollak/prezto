@@ -100,3 +100,8 @@ alias zz='fasd_cd -d -i' # cd with interactive selection
 alias config='/usr/bin/git --git-dir=/Users/jpollak/.cfg/ --work-tree=/Users/jpollak'
 
 source ${HOME}/.privaterc
+
+export PGHOST=localhost
+export PGUSER=6river
+export PGPASSWORD=6river
+export PATH=/Users/jpollak/.local/bin:$PATH
